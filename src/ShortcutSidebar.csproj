@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\shortcutsidebar.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="autofac" Version="5.2.0" />
+    <PackageReference Include="hardcodet.notifyicon.wpf" Version="1.0.8" />
+    <PackageReference Include="jetbrains.annotations" Version="2020.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\shortcutsidebar.ico" />
+  </ItemGroup>
+
+</Project>
