@@ -1,5 +1,6 @@
 ﻿namespace ShortcutSidebar.ViewModels
 {
+    using System;
     using System.Windows;
     using Commands;
     using Sidebar;
@@ -9,12 +10,10 @@
     {
         public RelayCommand ExitCommand { get; }
 
-        public TaskbarIconViewModel(SidebarViewModel sidebarViewModel)
+        public TaskbarIconViewModel(Func<SidebarWindow, SidebarViewModel> sidebarViewModelCreator)
         {
-            var sidebarWindow = new SidebarWindow
-            {
-                DataContext = sidebarViewModel
-            };
+            var sidebarWindow = new SidebarWindow();
+            sidebarWindow.DataContext = sidebarViewModelCreator(sidebarWindow);
 
             sidebarWindow.Show();
 

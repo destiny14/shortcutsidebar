@@ -10,6 +10,8 @@
         WindowStyle="None"
         ShowInTaskbar="False"
         mc:Ignorable="d"
+        Top="{Binding Top}"
+        Left="{Binding Left, Mode=TwoWay}"
         Title="MainWindow" Height="450" Width="120" d:DataContext="{d:DesignInstance sidebar:SidebarViewModel}">
     <ItemsControl ItemsSource="{Binding SidebarCommandViewModels}">
         <ItemsControl.ItemTemplate>

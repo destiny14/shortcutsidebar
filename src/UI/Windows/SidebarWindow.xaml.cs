@@ -1,8 +1,10 @@
 ﻿namespace ShortcutSidebar.UI.Windows
 {
     using System;
+    using System.ComponentModel;
     using System.Runtime.InteropServices;
     using System.Windows.Interop;
+    using ScreenHandling;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -22,6 +24,20 @@
             WindowInteropHelper helper = new WindowInteropHelper(this);
             SetWindowLong(helper.Handle, GWL_EXSTYLE,
                 GetWindowLong(helper.Handle, GWL_EXSTYLE) | WS_EX_NOACTIVATE);
+        }
+
+        protected override void OnInitialized(EventArgs e)
+        {
+            base.OnInitialized(e);
+
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            WorkspaceHelper.ResetAppBarArea(new WindowInteropHelper(this).Handle);
+
+            base.OnClosing(e);
+
         }
 
         private const int GWL_EXSTYLE = -20;
