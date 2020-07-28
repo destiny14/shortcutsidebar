@@ -14,7 +14,7 @@
             <ContextMenu>
                 <MenuItem Header="Settings" />
                 <Separator />
-                <MenuItem Header="Exit" />
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}" />
             </ContextMenu>
         </tb:TaskbarIcon.ContextMenu>
     </tb:TaskbarIcon>

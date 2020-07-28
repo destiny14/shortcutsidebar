@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="autofac" Version="5.2.0" />
     <PackageReference Include="hardcodet.notifyicon.wpf" Version="1.0.8" />
+    <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="jetbrains.annotations" Version="2020.1.0" />
   </ItemGroup>
 
